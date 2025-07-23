@@ -4,17 +4,12 @@ project(Oblivion C CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Set output directory for .efi binary
-# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/esp/EFI/Boot)
-
-# set(ESP_DIR "${CMAKE_SOURCE_DIR}/esp")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/esp/EFI/Boot)
 add_executable(BOOTX64.efi
     src/main.cc
     /usr/lib/crt0-efi-x86_64.o
 )
 
-# Optional: reinforce output directory (but now placed after target exists)
 set_target_properties(BOOTX64.efi PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/esp/EFI/Boot
 )

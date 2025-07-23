@@ -1,3 +1,7 @@
+#during cons
 build/
 boot.img
 esp/
+
+#python's cache
+.cache/
