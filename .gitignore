@@ -5,3 +5,7 @@ esp/
 
 #python's cache
 .cache/
+
+
+#important sys binaries 
+OVMF_VARS.fd

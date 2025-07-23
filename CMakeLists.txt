@@ -4,15 +4,16 @@ project(Oblivion C CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/esp/EFI/Boot)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/esp/EFI/Boot)
+
 add_executable(BOOTX64.efi
     src/main.cc
     /usr/lib/crt0-efi-x86_64.o
 )
 
-set_target_properties(BOOTX64.efi PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/esp/EFI/Boot
-)
+# set_target_properties(BOOTX64.efi PROPERTIES
+#     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/esp/EFI/Boot
+# )
 
 target_compile_options(BOOTX64.efi PRIVATE
     -fno-stack-protector
